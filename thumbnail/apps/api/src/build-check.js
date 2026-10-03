@@ -1,1 +1,0 @@
-import fs from 'node:fs';for(const f of ['apps/api/src/server.js','apps/api/src/storage.js','apps/api/src/providers.js','apps/api/src/worker.js','apps/api/migrations/001_init.sql','apps/api/migrations/002_production.sql','apps/web/public/index.html'])if(!fs.existsSync(f))throw Error(`Missing ${f}`);console.log('build-check ok');

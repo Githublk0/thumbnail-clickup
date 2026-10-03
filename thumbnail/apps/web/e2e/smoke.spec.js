@@ -1,1 +1,0 @@
-import{test,expect}from'@playwright/test';test('public app and health route',async({page,request})=>{await page.goto('/');await expect(page.getByRole('button',{name:/Create thumbnail/i}).first()).toBeVisible();const r=await request.get('/api/health');expect(r.ok()).toBeTruthy();expect((await r.json()).ok).toBeTruthy()});

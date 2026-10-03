@@ -1,4 +1,0 @@
-import 'node:process';
-import { z } from 'zod';
-const schema=z.object({NODE_ENV:z.enum(['development','test','production']).default('development'),PORT:z.coerce.number().default(4000),APP_ORIGIN:z.string().url(),DATABASE_URL:z.string().min(1),AUTH_SECRET:z.string().min(32),COOKIE_SECRET:z.string().min(32),TEXT_AI_PROVIDER:z.string().default(''),TEXT_AI_API_KEY:z.string().optional().default(''),IMAGE_AI_PROVIDER:z.string().optional().default(''),IMAGE_AI_API_KEY:z.string().optional().default(''),YOUTUBE_CLIENT_ID:z.string().optional().default(''),YOUTUBE_CLIENT_SECRET:z.string().optional().default(''),YOUTUBE_REDIRECT_URI:z.string().url().optional(),STRIPE_SECRET_KEY:z.string().optional().default(''),STRIPE_WEBHOOK_SECRET:z.string().optional().default('')});
-export const config=schema.parse(process.env);
