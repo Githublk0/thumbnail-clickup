@@ -1,0 +1,1 @@
+import fs from 'node:fs/promises';import{pool}from'./db.js';for(const f of ['001_init.sql','002_production.sql']){await pool.query(await fs.readFile(new URL(`../migrations/${f}`,import.meta.url),'utf8'));console.log(`migrated ${f}`)}await pool.end();
