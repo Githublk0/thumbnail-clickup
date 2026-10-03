@@ -1,0 +1,18 @@
+{
+  "name": "thumbnail-intelligence-preview",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node preview-server.js",
+    "dev": "node preview-server.js",
+    "api:start": "npm --prefix apps/api start",
+    "api:migrate": "npm --prefix apps/api run migrate",
+    "test": "node --test apps/api/test/*.test.js",
+    "lint": "node --check apps/api/src/*.js apps/web/public/api-client.js apps/web/public/integration.js",
+    "typecheck": "node --check apps/api/src/*.js apps/web/public/api-client.js apps/web/public/integration.js",
+    "build": "node apps/api/src/build-check.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
